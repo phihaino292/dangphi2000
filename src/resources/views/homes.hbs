@@ -1,0 +1,43 @@
+<div class="mt-4">
+    <div class="row">
+
+   {{#each product1s}}
+        <div class="col-sm-6 col-lg-4 top">
+            <div class="card" style="width: 18rem;">
+               
+       
+         <div class="card-body">
+             
+          <h5 class="card-title">{{this.name}}</h5>
+          
+                 <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                 
+                
+          
+          <h5 class="card-text">{{this.gia}}</h5>
+
+          <input type="number" name="soluong" min="1" max="10" value="1">
+          
+         <p class="card-text"> {{this.description}}</p>
+        <button class="btn btn-primary" onclick="themvaogiohang(this)"> Thêm vào giỏ hàng </button>
+  </div>
+</div>
+        </div>
+
+ {{/each}}
+
+
+    </div>
+    <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="http://localhost:3000">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+  <h1>ha</h1>
+</div>
+</div>
+ 

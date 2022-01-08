@@ -1,0 +1,127 @@
+<div class="mt-4">
+    <div class="row">
+
+    {{#each products}}
+        <div class="col-sm-6 col-lg-4 top">
+            <div class="card" style="width: 30rem;">
+               
+       
+         <div class="card-body">
+             <a href="/products/{{this.slug}}">
+          <h5 class="card-title">{{this.name}}</h5>
+          <a href="/products/{{this.slug}}">
+                 <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                 
+                 </a>
+          </a>
+          <h5 class="card-text">{{this.gia}}<span>.VNĐ</span></h5>
+
+          <input class="card-text-1" type="number" name="soluong" min="1" max="10" value="1">
+          
+         <p class="card-text"> {{this.description}}</p>
+        <button class="btn btn-primary button-color" onclick="themvaogiohang(this)"> Thêm vào giỏ hàng </button>
+  </div>
+</div>
+        </div>
+
+ {{/each}}
+
+    </div>
+    <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="http://localhost:3000">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+</div>
+ <script>
+
+document.getElementById("showcart").style.display="none";
+    var giohang=new Array();
+  
+      
+function themvaogiohang(y){
+
+ var sp1= y.parentElement.children;
+
+
+ var tensp = sp1[0].children[0].innerHTML;
+  var hinh = sp1[1].innerHTML; 
+  var gia=sp1[2].innerHTML;
+  var countl=sp1[3].value;
+ var sp = new Array(hinh,tensp,gia,countl);
+
+ giohang.push(sp);
+
+ showcountsp();
+ sessionStorage.setItem("giohang",JSON.stringify(giohang));          
+}
+
+
+function showcountsp() {
+    document.getElementById("countsp").innerHTML = giohang.length;
+    
+}
+
+    function showcart() {
+          
+        var x =  document.getElementById("showcart");
+        
+        if(x.style.display == "block"){
+            x.style.display="none";
+        } 
+        else{
+          x.style.display="block";
+          showmycart();
+        }       
+      }
+      function showmycart(){
+        var ttgh="";
+        var tong=0;
+        for(let i=0;i<giohang.length;i++){
+          var tt= parseInt(giohang[i][2]) * parseInt(giohang[i][3]);
+          tong+=tt;
+            ttgh+='<tr>'+
+            '<td>'+(i+1)+'</td>' +
+            '<td>'+giohang[i][0]+'</td>' +
+            '<td>'+giohang[i][1]+'</td>' +
+            '<td>'+giohang[i][2]+'</td>' +
+            '<td>'+giohang[i][3]+'</td>' +
+            
+            '<td>' +
+               ' <div>'+(tt)+'</div>' +
+            '</td>' +
+        '</tr>';
+        
+        }
+        ttgh += '<tr>' +
+        '<th colspan="5">Tổng đơn hàng</th>' +
+        '<th>' +
+        '<div>' + tong + '</div>' +
+        ' </th>' +
+
+        '</tr>'
+       
+       
+        document.getElementById("mycart").innerHTML=ttgh;
+          }
+
+
+
+
+
+
+        
+
+    
+
+          
+          </script>
+    
+
+
+     

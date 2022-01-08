@@ -1,0 +1,321 @@
+<div class="boxcenter">
+        <div class="row mb header">
+            <h1> SIÊU THỊ TRỰC TUYẾN</h1>
+        </div>
+        <div class="row mb menu">
+            <ul>
+                <li><a href="http://localhost:3000">Trang chủ</a></li>
+                <li><a href="cart.html">Giỏ hàng</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Góp ý</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+            </ul>
+        </div>
+        <div class="row mb ">
+            <div class="boxtrai mr">
+                <div class="row">
+                    <h1>THÔNG TIN NHẬN HÀNG</h1>
+
+
+    <form class="allform" method="post" action="users/store" >
+                   
+
+
+                    <table class="thongtinnhanhang">
+                        <tbody id="thongtinnhanhang">
+                        <tr>
+                            <td>Họ tên</td>
+                            <td><input class="input_1" type="text" name="hoten"/></td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td><input class="input_1" type="text" name="diachi"/></td>
+                        </tr>
+                        <tr>
+                            <td>Điện thoại</td>
+                            <td><input class="input_1" type="text" name="dienthoai"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input class="input_1" type="text" name="email"/></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <div class="row mb">
+                    <h1>GIỎ HÀNG</h1>
+                    <table>
+                        <tr>
+                            <th>STT1</th>
+                            <th>Hình</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền ($)</th>
+                        </tr>
+                        <tbody id="mycart1"></tbody>
+                    </table>
+                </div>
+                <div class="row mb">
+                   
+            <button class="dongy" onclick="dongydathang()">    <a class="dongy" href="http://localhost:3000/items">ĐỒNG Ý ĐẶT HÀNG</a>
+            </button>    
+                </div>
+            </div>
+            <div class="boxphai">
+                <div class="row mb ">
+                    {{!-- <div class="boxtitle">TÀI KHOẢN</div> --}}
+                    {{!-- <div class="boxcontent formtaikhoan">
+                        <form action="#" method="post">
+                            <div class="row mb10">
+                                Tên đăng nhập<br>
+                                <input type="text" name="user">
+                            </div>
+                            <div class="row mb10">
+                                Mật khẩu<br>
+
+                                <input type="password" name="pass">
+                            </div>
+                            <div class="row mb10">
+                                <input type="checkbox" name=""> Ghi nhớ tài khoản?</div>
+                            <div class="row mb10">
+                                <input type="submit" value="Đăng nhập">
+                            </div>
+                        </form>
+                        <li>
+                            <a href="#">Quên mật khẩu</a>
+                        </li>
+                        <li>
+                            <a href="#">Đăng ký thành viên</a>
+                        </li>
+                    </div> --}}
+                </div>
+                <div class="row mb">
+                    <div class="boxtitle">DANH MỤC</div>
+                    <div class="boxcontent2 menudoc">
+                        <ul>
+                            <li>
+                                <a href="#">Khoai tây</a>
+                            </li>
+                            <li>
+                                <a href="#">Gà rán</a>
+                            </li>
+                            <li>
+                                <a href="#">Rau củ</a>
+                            </li>
+                            <li>
+                                <a href="#">Thịt tươi</a>
+                            </li>
+                            <li>
+                                <a href="#">Sữa tươi</a>
+                            </li>
+                            <li>
+                                <a href="#">Sữa bột</a>
+                            </li>
+                            <li>
+                                <a href="#">Hải sản</a>
+                            </li>
+                            <li>
+                                <a href="#">Nước uống</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxfooter searbox">
+                        <form action="#" method="post">
+                            <input type="text" name="" id="">
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="boxtitle">TOP 10 YÊU THÍCH</div>
+                    <div class="row boxcontent">
+                        <div class="row mb10 top10">
+                            <img src="images/1.jpg" alt="">
+                            <a href="#">Sir Rodney's Marmalade</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/5.jpg" alt="">
+                            <a href="#">Cate de Blaye</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/3.jpg" alt="">
+                            <a href="#">Tharinger Rostbratwurst</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/4.jpg" alt="">
+                            <a href="#">Mishi Kobe Niku</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/1.jpg" alt="">
+                            <a href="#">Sir Rodney's Marmalade</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/5.jpg" alt="">
+                            <a href="#">Cate de Blaye</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/3.jpg" alt="">
+                            <a href="#">Tharinger Rostbratwurst</a>
+                        </div>
+                        <div class="row mb10 top10">
+                            <img src="images/4.jpg" alt="">
+                            <a href="#">Mishi Kobe Niku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb footer">
+            Copyright © 2021 - HOTB
+        </div>
+    </div>
+
+    
+<script>
+
+     var giohang=new Array();
+  
+      
+function themvaogiohang(y){
+
+ var sp1= y.parentElement.children;
+
+
+ var tensp = sp1[0].children[0].innerHTML;
+  var hinh = sp1[1].innerHTML; 
+  var gia=sp1[2].innerHTML;
+  var countl=sp1[3].value;
+ var sp = new Array(hinh,tensp,gia,countl);
+
+ giohang.push(sp);
+
+ showcountsp();
+ sessionStorage.setItem("giohang",JSON.stringify(giohang));          
+}
+
+
+function showcountsp() {
+    document.getElementById("countsp").innerHTML = giohang.length;
+    
+}
+
+    function showcart() {
+          
+        var x =  document.getElementById("showcart");
+        if(x.style.display == "block"){
+            x.style.display="none";
+        } 
+        else{
+          x.style.display="block";
+          showmycart();
+        }       
+      }
+      function showmycart(){
+        var ttgh="";
+        var tong=0;
+        for(let i=0;i<giohang.length;i++){
+          var tt= parseInt(giohang[i][2]) * parseInt(giohang[i][3]);
+          tong+=tt;
+            ttgh+='<tr>'+
+            '<td>'+(i+1)+'</td>' +
+            '<td>'+giohang[i][0]+'</td>' +
+            '<td>'+giohang[i][1]+'</td>' +
+            '<td>'+giohang[i][2]+'</td>' +
+            '<td>'+giohang[i][3]+'</td>' +
+            
+            '<td>' +
+               ' <div>'+(tt)+'</div>' +
+            '</td>' +
+        '</tr>';
+        
+        }
+        ttgh += '<tr>' +
+        '<th colspan="5">Tổng đơn hàng</th>' +
+        '<th>' +
+        '<div>' + tong + '</div>' +
+        ' </th>' +
+
+        '</tr>'
+       
+       
+        document.getElementById("mycart1").innerHTML=ttgh;
+          }
+
+    
+function showgiohang_trangthanhtoan(){
+              var gh=sessionStorage.getItem("giohang");
+              var giohang=JSON.parse(gh);
+              var ttgh="";
+          var tong=0;
+          for(let i=0;i<giohang.length;i++){
+            var tt= parseInt(giohang[i][2]) * parseInt(giohang[i][3]);
+            tong+=tt;
+              ttgh+='<tr>'+
+              '<td>'+(i+1)+'</td>' +
+              '<td>'+giohang[i][0]+'</td>' +
+              '<td>'+giohang[i][1]+'</td>' +
+              
+              '<td>'+giohang[i][2]+'</td>' +
+              '<td>'+giohang[i][3]+'</td>' +
+              '<td>' +
+                 ' <div>'+(tt)+'</div>' +
+              '</td>' +
+          '</tr>';
+          
+          }
+        
+          ttgh+='<tr>'+
+          '<th colspan="5">Tổng đơn hàng</th>'+
+          '<th>'+
+              '<div>'+tong+'</div>'+
+         ' </th>'+
+
+      '</tr>'
+          document.getElementById("mycart1").innerHTML=ttgh;
+            }
+       function dongydathang() {
+    var ttnh = document.getElementById("thongtinnhanhang").children;
+    var hoten = ttnh[0].children[1].children[0].value;
+    var diachi = ttnh[1].children[1].children[0].value;
+    var dienthoai = ttnh[2].children[1].children[0].value;
+    var email = ttnh[3].children[1].children[0].value;
+
+    var nguoinhan = new Array(hoten, diachi, dienthoai, email);
+    console.log(nguoinhan);
+    sessionStorage.setItem("nguoinhan", JSON.stringify(nguoinhan));
+
+    window.location.assign("item.hbs");
+}
+
+function showthongtinnguoinhan() {
+    var nguoinhan = sessionStorage.getItem("nguoinhan");
+    var thongtin = JSON.parse(nguoinhan);
+
+    var tt = ' <tr>' +
+        '<td width="20%">Họ tên</td>' +
+        '<td>' + thongtin[0] + '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>Địa chỉ</td>' +
+        '<td>' + thongtin[1] + '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>Điện thoại</td>' +
+        '<td>' + thongtin[2] + '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>Email</td>' +
+        '<td>' + thongtin[3] + '</td>' +
+        '</tr>';
+
+    document.getElementById("thongtinnhanhang").innerHTML = tt;
+}
+    
+        
+      
+  </script>
+  <script>
+    
+      showgiohang_trangthanhtoan();
+  </script>
+    
